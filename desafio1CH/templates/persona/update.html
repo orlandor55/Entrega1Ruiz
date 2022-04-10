@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    Editar Familiar {{familiar}}      
+{% endblock title %}
+
+
+{% block content %}
+
+{% include 'includes/header.html' %}
+
+<div class="grid-container ">
+
+    <div class="grid-x">
+        <h1 class="cell text-center ">Actualizar a {{familiar}}  </h1>
+    </div>
+    <div class="cell">
+        <form action="" method="POST" class="grid-x grid-margin-x">{% csrf_token %}
+            <div class="cell large-6">
+                <label>Nombre
+                    {{form.first_name}}
+                </label>
+            </div>
+            <div class="cell large-6">
+                <label>Apellido
+                    {{form.last_name}}
+                </label>
+            </div>
+            <div class="cell large-6">
+                <label>Parentesco
+                    {{form.relative}}
+                </label>
+            </div>
+            <div class="cell large-6">
+                <label>Hobbies
+                    {{form.hobbies}}
+                </label>
+            </div> 
+            <div class="cell large-6">
+                <label>Foto
+                    {{form.foto}}
+                </label>
+            </div>
+            <div class="cell large-6">
+                <button type="submit" class="submit success button">Guardar cambios</button>
+            </div>
+        </form>
+    </div>
+</div>
+    
+{% endblock content %}

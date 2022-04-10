@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block title %}
+    Detalle de {{familiar}}        
+{% endblock title %}
+
+
+{% block content %}
+
+{% include 'includes/header.html' %}
+
+<div class="grid-container ">
+    <div class="grid-x ">
+        <h1 class="cell large-7 " style="text-align: center;">Detalle del Familiar</h1>
+            <div class="cell large-7">
+                <div class="card" style="width: 300px;">
+                    <div class="card-divider">
+                        {{familiar}} | {{familiar.relative}} 
+                    </div>
+                        
+                        {% if familiar.foto %}
+                            <img src="{{familiar.foto.url}}">
+                        {% else %}
+                            <img src="{% static 'img/avatar_vicky.jpeg' %}">
+
+                        {% endif %}
+                            
+                    <div class="card-section">
+                      <h4>{{familiar}}</h4>
+                      <p><span class="label">Nacimiento: </span></p>
+                      <p>{{familiar.birthday}}</p>
+                      <p><span class="label">Edad: </span></p>
+                      <p>{{familiar.age}} años</p>
+                      <p><span class="label">Bio: </span></p>
+                      <p>{{familiar.bio}}</p>
+                      <p><span class="label">Hobbies:</span></p>
+                            <ul class="vertical menu">
+                                
+                                {% for h in familiar.hobbies.all %}
+
+                                    <li>{{h}}</li>
+                                    
+                                {% endfor %}
+                                    
+                            </ul>
+
+                    </div>
+                </div>
+                <div class="cell large-5">
+                    <h3>{{familiar}} es {{titulo}}</h1>
+    
+                </div> 
+            </div>
+            
+
+
+
+
+
+
+
+
+    
+
+   
+{% endblock content %}
