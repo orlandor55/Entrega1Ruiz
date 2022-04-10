@@ -10,13 +10,13 @@ ALLOWED_HOSTS = []
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'familia',
-        'USER': 'orlando',
-        'PASSWORD': 'Lyalazloz55',
+        'NAME': 'BBDD_Name',
+        'USER': 'BD_User',
+        'PASSWORD': 'BD_Password',
         'HOST': 'localhost',
         'PORT': '5432',
     }
-}
+} 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
